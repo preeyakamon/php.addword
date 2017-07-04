@@ -17,7 +17,7 @@ require_once '../database/connector.php';
     $resp["result"] = true;
     $resp["max_answer"] = $maxtest;
     $resp["second"] = $second;
-    $resp["hidden_char"] =$hidden_char;
+    $resp["hidden_char"] = $hidden_char;
     $data = array();
     while ($rowtest = mysqli_fetch_array($querytest)) {
       $item = [];
