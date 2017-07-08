@@ -27,9 +27,15 @@
        <div class="form-group">
               <label for="level_id" class="col-sm-2 control-label">Level</label>
             <div class="col-sm-3">
-              <input type="id" class="form-control" id="level_id" name="level_id" value="<?php echo $row["level_id"]; ?>" placeholder="Level">
+              <input type="id" class="form-control" readonly="readonly" id="level_id" name="level_id" value="<?php echo $row["level_id"]; ?>" placeholder="Level">
             </div>
       </div>
+      <div class="form-group">
+             <label for="name" class="col-sm-2 control-label">Name</label>
+           <div class="col-sm-3">
+             <input type="name" class="form-control" id="name" name="name" value="<?php echo $row["name"]; ?>" placeholder="name">
+           </div>
+     </div>
       <div class="form-group">
              <label for="hidden_char" class="col-sm-2 control-label">Hiddenchar</label>
            <div class="col-sm-3">
@@ -39,7 +45,18 @@
      <div class="form-group">
             <label for="number_answer" class="col-sm-2 control-label">Numberanswer</label>
           <div class="col-sm-3">
-            <input type="number_answer" class="form-control" id="number_answer" name="number_answer" value="<?php echo $row["number_answer"]; ?>" placeholder="number_answer">
+            <?php
+              if($row["number_answer"] == 0) {
+                ?>
+                <input type="number_answer" readonly="readonly" class="form-control" id="number_answer" name="number_answer" value="<?php echo $row["number_answer"]; ?>" placeholder="number_answer">
+                <?php
+              } else {
+                ?>
+                <input type="number_answer" class="form-control" id="number_answer" name="number_answer" value="<?php echo $row["number_answer"]; ?>" placeholder="number_answer">
+                <?php
+              }
+            ?>
+
           </div>
     </div>
     <div class="form-group">

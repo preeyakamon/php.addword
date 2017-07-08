@@ -20,6 +20,7 @@
      <table class="table table-bordered">
        <tr class="info" >
            <td align='center'>Level</td>
+           <td align='center'>name</td>
            <td align='center'>Hidden_Char</td>
            <td align='center'>Number_answer</td>
            <td align='center'>Second</td>
@@ -30,11 +31,12 @@
        while ($row = mysqli_fetch_array($query)) {
          echo '<tr>';
          echo '<td align="center">'.$row["level_id"].' </td>';
+         echo '<td align="center">'.$row["name"].' </td>';
          echo '<td align="center">'.$row["hidden_char"].' </td>';
          echo '<td align="center">'.$row["number_answer"].' </td>';
          echo '<td align="center">'.$row["second"].' </td>';
          $id = $row["level_id"];
-         echo '<td align="center"><a href ="editformlevel-time.php?id='.$id.'" class="btn btn-default btn-sm" href="#" role="button">Edit</a></td>';
+         echo '<td align="center"><a href ="editformlevel-time.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a></td>';
          echo '</tr>';
        }
         ?>

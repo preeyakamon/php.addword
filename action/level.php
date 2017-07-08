@@ -1,5 +1,17 @@
 <?php
 require_once '../database/connector.php';
+$sqlStep1 = "SELECT * FROM level WHERE level_id <> 0 Order by number_answer desc" ;
+$queryStep1 = mysqli_query($conn, $sqlStep1);
+$stepArray1 = array();
+while ($rowStep1 = mysqli_fetch_array($queryStep1)) {
+  $step1 = [];
+  $step1["level_id"] = $rowStep1["level_id"];
+  $step1["number"] = $rowStep1["test"];
+
+  array_push($stepArray1, $step1);
+
+}
+
   $level = isset($_POST["level_id"]) ? $_POST["level_id"] : null;
   if ($level != null) {
       $sqlplay = "SELECT * FROM level WHERE level_id = $level";
@@ -15,6 +27,7 @@ require_once '../database/connector.php';
         $data["number_answer"] = $rowplay["number_answer"];
         $data["hidden_char"] = $rowplay["hidden_char"];
         $data["second"] = $rowplay["second"];
+        $data["step"] = $stepArray1;
 
         $vocab = array();
         while ($rowplay1 = mysqli_fetch_array($querplay1)) {

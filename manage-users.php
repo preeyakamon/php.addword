@@ -1,3 +1,9 @@
+<?php
+  require_once 'database/connector.php';
+  $sql = "SELECT * FROM user";
+  $query = mysqli_query($conn, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,20 +19,25 @@
 
      <table class="table table-striped table-bordered">
       <tr class="success" >
-          <b><td>ลำดับที่</td></b>
-          <td>Name</td>
-          <td>UserName</td>
-          <td>Action</td>
+          <td align='center'>ลำดับที่</td>
+          <td align='center'>Name</td>
+          <td align='center'>UserName</td>
+          <td align='center'>Action</td>
       </tr>
-      <tr>
-          <td>ลำดับที่</td>
-          <td>Name</td>
-          <td>UserName</td>
-          <td>
-            <button type="button" class="btn btn-primary btn-sm">Edit</button>
-            <button type="button" class="btn btn-danger btn-sm">Delete</button>
-          </td>
-      </tr>
+      <?php
+
+      while ($row = mysqli_fetch_array($query)) {
+        echo '<tr>';
+        echo '<td align="center">'.$row["user_id"].' </td>';
+        echo '<td align="center">'.$row["name"].' </td>';
+        echo '<td align="center">'.$row["username"].' </td>';
+        $id = $row["user_id"];
+        echo '<td align="center"><button type="button" class="btn btn-primary btn-sm">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm">Delete</button></td>';
+        echo '</tr>';
+      }
+       ?>
+
     </table>
     </div>
 
