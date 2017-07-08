@@ -11,9 +11,9 @@
    <div class="row">
      <h2>Manage User</h2>
 
-     <table class="table table-striped">
+     <table class="table table-striped table-bordered">
       <tr class="success" >
-          <td>ลำดับที่</td>
+          <b><td>ลำดับที่</td></b>
           <td>Name</td>
           <td>UserName</td>
           <td>Action</td>
