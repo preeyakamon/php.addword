@@ -12,7 +12,7 @@
      </ul>
    </li>
    <li><a href="manager-Level-Time.php">Manager Level and Time</a></li>
-   <li><a href="#">Manager Vocabulary</a></li>
+   <li><a href="manager-vocab.php">Manager Vocabulary</a></li>
    <li><a href="#">Manager statistic</a></li>
   </ul>
 </div>

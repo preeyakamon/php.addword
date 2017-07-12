@@ -17,12 +17,13 @@
    <div class="row">
      <h2>Manager Level and Time</h2>
 
-     <table class="table table-bordered">
+     <table class="table table-striped table-bordered">
        <tr class="info" >
            <td align='center'>Level</td>
            <td align='center'>name</td>
            <td align='center'>Hidden_Char</td>
            <td align='center'>Number_answer</td>
+           <td align='center'>TestLevel</d>
            <td align='center'>Second</td>
            <td align='center'>Action</td>
        </tr>
@@ -34,6 +35,7 @@
          echo '<td align="center">'.$row["name"].' </td>';
          echo '<td align="center">'.$row["hidden_char"].' </td>';
          echo '<td align="center">'.$row["number_answer"].' </td>';
+         echo '<td align="center">'.$row["test"].' </td>';
          echo '<td align="center">'.$row["second"].' </td>';
          $id = $row["level_id"];
          echo '<td align="center"><a href ="editformlevel-time.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a></td>';

@@ -32,8 +32,9 @@
         echo '<td align="center">'.$row["name"].' </td>';
         echo '<td align="center">'.$row["username"].' </td>';
         $id = $row["user_id"];
-        echo '<td align="center"><button type="button" class="btn btn-primary btn-sm">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm">Delete</button></td>';
+        echo '<td align="center"><a href ="editformuser.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
+              <a href ="editformlevel-time.php?id='.$id.'" class="btn btn-danger btn-sm" href="#" role="button">Delete</a></td>';
+
         echo '</tr>';
       }
        ?>

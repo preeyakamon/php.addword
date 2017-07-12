@@ -60,6 +60,12 @@
           </div>
     </div>
     <div class="form-group">
+           <label for="hidden_char" class="col-sm-2 control-label">TestLevel</label>
+         <div class="col-sm-3">
+           <input type="test" class="form-control" id="test" name="test" value="<?php echo $row["test"]; ?>" placeholder="test">
+         </div>
+   </div>
+    <div class="form-group">
            <label for="second" class="col-sm-2 control-label">Second</label>
          <div class="col-sm-3">
            <input type="second" class="form-control" id="second" name="second" value="<?php echo $row["second"]; ?>" placeholder="second">
