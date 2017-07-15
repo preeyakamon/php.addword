@@ -1,6 +1,10 @@
 <?php
   require_once 'database/connector.php';
-  $sql = "SELECT * FROM vocabulary";
+  $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+  $page -= 1;
+  $numberDisplay = 50;
+  $start = $page * $numberDisplay;
+  $sql = "SELECT * FROM vocabulary LIMIT $start, $numberDisplay";
   $query = mysqli_query($conn, $sql);
 ?>
 
@@ -16,8 +20,10 @@
   <div class="container">
    <div class="row">
      <h2>Manager Vocabulary</h2>
+     <tr class="warning" >
+
       <table class="table table-striped table-bordered">
-        <tr class="danger" >
+        <tr class="warning" >
             <td align='center'>Vocabulary_id</td>
             <td align='center'>Vocabulary_Name</td>
             <td align='center'>Translation</td>
@@ -33,14 +39,26 @@
           echo '<td align="center">'.$row["translation"].' </td>';
           echo '<td align="center">'.$row["level_id"].' </td>';
           $id = $row["vocabulary_id"];
-          echo '<td align="center"><button class="btn btn-default" type="submit">Edit</button>
-                <button class="btn btn-default" type="submit">Delete</button></td>';
+          echo '<td align="center"><a href ="editformvocab.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
+                <a href ="editformlevel-time.php?id='.$id.'" class="btn btn-danger btn-sm" href="#" role="button">Delete</a></td>';
 
           echo '</tr>';
         }
          ?>
 
       </table>
+      <div align="center">
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="active"><a href="?page=1">1 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=2">2 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=3">3 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=4">4 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=5">5 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=6">6 <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </nav>
+      </div>
    </div>
   </div>
 </body>

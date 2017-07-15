@@ -22,7 +22,7 @@
         <br/>
    <div class="row">
      <div class="col-md-10 col-md-offset-1 jumbotron well">
-     <h2 >Edit Form</h2>
+     <h2 >Edit Level and Time</h2>
      <form class="form-horizontal" action="action/editlevel-time.php?id=<?php echo $id;?>" method="post">
        <div class="form-group">
               <label for="level_id" class="col-sm-2 control-label">Level</label>
