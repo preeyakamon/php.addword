@@ -21,7 +21,7 @@
        <tr class="info" >
            <td align='center'>Level</td>
            <td align='center'>name</td>
-           <td align='center'>Hidden_Char</td>
+           <td align='center'>จำนวนคำที่ซ่อน</td>
            <td align='center'>Number_answer</td>
            <td align='center'>TestLevel</d>
            <td align='center'>Second</td>

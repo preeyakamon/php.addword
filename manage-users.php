@@ -1,6 +1,10 @@
 <?php
   require_once 'database/connector.php';
   $sql = "SELECT * FROM user";
+  $search = isset($_GET["search"]) ? $_GET["search"] : "";
+  if ($search != "") {
+  $sql .= " WHERE user.username like '%$search%'";
+}
   $query = mysqli_query($conn, $sql);
 ?>
 
@@ -17,6 +21,18 @@
    <div class="row">
      <h2>Manager User</h2>
 
+     <center>
+     <form class="form-inline">
+       <div class="form-group">
+    <label for="username"></label>
+    <input type="text" name="search" class="form-control" id="username" placeholder="Username" value="<?=$search;?>">
+    </div>
+    <button type="submit" class="btn btn-info">Search</button>
+    <a href="addadmin.php" class="btn btn-success">Add</a>
+    </form>
+    </center>
+
+    <br/>
      <table class="table table-striped table-bordered">
       <tr class="success" >
           <td align='center'>ลำดับที่</td>

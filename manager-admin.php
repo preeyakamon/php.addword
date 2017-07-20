@@ -20,6 +20,7 @@
   <div class="container">
    <div class="row">
      <h2>Manager Admin</h2>
+
      <center>
      <form class="form-inline">
        <div class="form-group">
@@ -30,6 +31,7 @@
     <a href="addadmin.php" class="btn btn-success">Add</a>
     </form>
     </center>
+
       <br>
      <table class="table table-striped table-bordered">
       <tr class="success" >

@@ -1,11 +1,3 @@
-<?php
-  require_once 'database/connector.php';
-  $id = $_GET["id"];
-  $sql = "SELECT * FROM level WHERE level_id = '$id'";
-  $query = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($query);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

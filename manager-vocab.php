@@ -5,6 +5,10 @@
   $numberDisplay = 50;
   $start = $page * $numberDisplay;
   $sql = "SELECT * FROM vocabulary LIMIT $start, $numberDisplay";
+  $search = isset($_GET["search"]) ? $_GET["search"] : "";
+  if ($search != "") {
+  $sqlsearch .= " WHERE vocabulary.vocabulary_name like '%$search%'";
+}
   $query = mysqli_query($conn, $sql);
 ?>
 
@@ -22,6 +26,18 @@
      <h2>Manager Vocabulary</h2>
      <tr class="warning" >
 
+       <center>
+       <form class="form-inline">
+         <div class="form-group">
+      <label for="vocabulary_name"></label>
+      <input type="text" name="search" class="form-control" id="vocabulary_name" placeholder="Vocabulary_name" value="<?=$search;?>">
+      </div>
+      <button type="submit" class="btn btn-info">Search</button>
+      <a href="addvocab.php" class="btn btn-success">Add</a>
+      </form>
+      </center>
+
+        <br>
       <table class="table table-striped table-bordered">
         <tr class="warning" >
             <td align='center'>Vocabulary_id</td>

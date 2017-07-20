@@ -20,6 +20,18 @@
   <div class="container">
    <div class="row">
      <h2>Manager Statistic</h2>
+
+     <center>
+     <form class="form-inline">
+       <div class="form-group">
+    <label for="username"></label>
+    <input type="text" name="search" class="form-control" id="username" placeholder="Username" value="<?=$search;?>">
+    </div>
+    <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    </center>
+
+      <br>
      <tr class="danger" >
 
       <table class="table table-striped table-bordered">
