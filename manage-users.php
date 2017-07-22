@@ -14,6 +14,17 @@
   <title>add word</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php require_once 'header.php'; ?>
+
+  <script type="text/javascript">
+  function func_delete(id) {
+
+    if (!confirm('Do You Want To Delete?')) {
+      e.preventDefault();
+      return false;
+    }
+    window.location.href ="action/user_delete.php?user_id=" + id
+  }
+  </script>
 </head>
 <body>
   <?php include_once 'navbar.php'; ?>
@@ -28,7 +39,7 @@
     <input type="text" name="search" class="form-control" id="username" placeholder="Username" value="<?=$search;?>">
     </div>
     <button type="submit" class="btn btn-info">Search</button>
-    <a href="addadmin.php" class="btn btn-success">Add</a>
+    <a href="adduser.php" class="btn btn-success">Add</a>
     </form>
     </center>
 
@@ -42,16 +53,19 @@
       </tr>
       <?php
 
+    $count =1;
       while ($row = mysqli_fetch_array($query)) {
         echo '<tr>';
-        echo '<td align="center">'.$row["user_id"].' </td>';
+        echo '<td align="center">'.$count.' </td>';
+      //  echo '<td align="center">'.$row["user_id"].' </td>';
         echo '<td align="center">'.$row["name"].' </td>';
         echo '<td align="center">'.$row["username"].' </td>';
         $id = $row["user_id"];
         echo '<td align="center"><a href ="editformuser.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
-              <a href ="editformlevel-time.php?id='.$id.'" class="btn btn-danger btn-sm" href="#" role="button">Delete</a></td>';
+              <button type="button" class="btn btn-danger btn-sm" onclick = "func_delete(\''.$row["user_id"].'\');" >Delete</a></td>';
 
         echo '</tr>';
+        $count++;
       }
        ?>
 

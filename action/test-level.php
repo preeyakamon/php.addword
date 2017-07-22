@@ -4,7 +4,7 @@ require_once '../database/connector.php';
   $queryLevle = mysqli_query($conn, $sqlLevel);
   $rowLevel = mysqli_fetch_assoc($queryLevle);
 
-  $sqlStep = "SELECT * FROM level WHERE level_id <> 0 Order by number_answer desc" ;
+  $sqlStep = "SELECT * FROM level WHERE level_id <> 0 Order by test desc" ;
   $queryStep = mysqli_query($conn, $sqlStep);
   $stepArray = array();
   while ($rowStep = mysqli_fetch_array($queryStep)) {

@@ -52,7 +52,7 @@
 
 
    <button type="submit" class="btn btn-primary">Save</button>
-        <a href="manage-users.php" class="btn btn-warning">Cancel</a>
+        <a href="manager-vocab.php" class="btn btn-warning">Cancel</a>
 
 
    </div>

@@ -27,8 +27,8 @@
            <td align='center'>Second</td>
            <td align='center'>Action</td>
        </tr>
-       <?php
 
+       <?php
        while ($row = mysqli_fetch_array($query)) {
          echo '<tr>';
          echo '<td align="center">'.$row["level_id"].' </td>';

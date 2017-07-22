@@ -1,9 +1,9 @@
 <?php
   require_once 'database/connector.php';
-  $sql = "SELECT * FROM score LEFT JOIN user on user.name, user.username, scor.tataltime, scor.datatime";
+  $sql = "SELECT * FROM score ";
   $search = isset($_GET["search"]) ? $_GET["search"] : "";
   if ($search != "") {
-  $sql .= " WHERE admin.username like '%$search%'";
+  $sql .= " WHERE score.datetime like '%$search%'";
   }
   $query = mysqli_query($conn, $sql);
 ?>
@@ -25,7 +25,7 @@
      <form class="form-inline">
        <div class="form-group">
     <label for="username"></label>
-    <input type="text" name="search" class="form-control" id="username" placeholder="Username" value="<?=$search;?>">
+    <input type="text" name="search" class="form-control" id="username" placeholder="Datetime" value="<?=$search;?>">
     </div>
     <button type="submit" class="btn btn-info">Search</button>
     </form>
@@ -36,12 +36,22 @@
 
       <table class="table table-striped table-bordered">
         <tr class="danger" >
-            <td align='center'>Name</td>
-            <td align='center'>Username</td>
+            <td align='center'>UserID</td>
+            <td align='center'>Score</td>
             <td align='center'>Totaltime</td>
-            <td align='center'>Datatime</td>
+            <td align='center'>Datetime</td>
         </tr>
 
+        <?php
+        while ($row = mysqli_fetch_array($query)) {
+          echo '<tr>';
+          echo '<td align="center">'.$row["user_id"].' </td>';
+          echo '<td align="center">'.$row["score"].' </td>';
+          echo '<td align="center">'.$row["totaltime"].' </td>';
+          echo '<td align="center">'.$row["datetime"].' </td>';
+          echo '</tr>';
+        }
+         ?>
       </table>
    </div>
   </div>

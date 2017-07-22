@@ -4,20 +4,27 @@
   $page -= 1;
   $numberDisplay = 50;
   $start = $page * $numberDisplay;
-  $sql = "SELECT * FROM vocabulary LIMIT $start, $numberDisplay";
-  $search = isset($_GET["search"]) ? $_GET["search"] : "";
-  if ($search != "") {
-  $sqlsearch .= " WHERE vocabulary.vocabulary_name like '%$search%'";
-}
+    $search = isset($_GET["search"]) ? $_GET["search"] : "";
+  $sql = "SELECT * FROM vocabulary WHERE vocabulary.vocabulary_name like '%$search%' or vocabulary.translation like '%$search%' LIMIT $start, $numberDisplay";
   $query = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>add word</title>
+  <title>addword</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <?php require_once 'header.php'; ?>
+  <script type="text/javascript">
+  function func_delete(id) {
+
+    if (!confirm('Do you want to delete?')) {
+      e.preventDefault();
+      return false;
+    }
+    window.location.href ="action/vocab_delete.php?vocabulary_id=" + id
+  }
+  </script>
 </head>
 <body>
   <?php include_once 'navbar.php'; ?>
@@ -30,7 +37,7 @@
        <form class="form-inline">
          <div class="form-group">
       <label for="vocabulary_name"></label>
-      <input type="text" name="search" class="form-control" id="vocabulary_name" placeholder="Vocabulary_name" value="<?=$search;?>">
+      <input type="text" name="search" class="form-control" id="vocabulary_name" placeholder="Vocabularyname,Translation" value="<?=$search;?>">
       </div>
       <button type="submit" class="btn btn-info">Search</button>
       <a href="addvocab.php" class="btn btn-success">Add</a>
@@ -48,6 +55,7 @@
         </tr>
         <?php
 
+
         while ($row = mysqli_fetch_array($query)) {
           echo '<tr>';
           echo '<td align="center">'.$row["vocabulary_id"].' </td>';
@@ -56,9 +64,10 @@
           echo '<td align="center">'.$row["level_id"].' </td>';
           $id = $row["vocabulary_id"];
           echo '<td align="center"><a href ="editformvocab.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
-                <a href ="editformlevel-time.php?id='.$id.'" class="btn btn-danger btn-sm" href="#" role="button">Delete</a></td>';
+                <button type="button" class="btn btn-danger btn-sm" onclick = "func_delete(\''.$row["vocabulary_id"].'\');" >Delete</a></td>';
 
           echo '</tr>';
+
         }
          ?>
 
