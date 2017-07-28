@@ -5,7 +5,7 @@
   $numberDisplay = 50;
   $start = $page * $numberDisplay;
     $search = isset($_GET["search"]) ? $_GET["search"] : "";
-  $sql = "SELECT * FROM vocabulary WHERE vocabulary.vocabulary_name like '%$search%' or vocabulary.translation like '%$search%' LIMIT $start, $numberDisplay";
+  $sql = "SELECT * FROM vocabulary WHERE vocabulary.vocabulary_name like '%$search%' or vocabulary.translation like '%$search%' or vocabulary.level_id like '%$search%' LIMIT $start, $numberDisplay";
   $query = mysqli_query($conn, $sql);
 ?>
 

@@ -49,6 +49,7 @@
           <td align='center'>ลำดับที่</td>
           <td align='center'>Name</td>
           <td align='center'>UserName</td>
+          <td align='center'>Status</td>
           <td align='center'>Action</td>
       </tr>
       <?php
@@ -60,6 +61,7 @@
       //  echo '<td align="center">'.$row["user_id"].' </td>';
         echo '<td align="center">'.$row["name"].' </td>';
         echo '<td align="center">'.$row["username"].' </td>';
+        echo '<td align="center">'.$row["status"].' </td>';
         $id = $row["user_id"];
         echo '<td align="center"><a href ="editformuser.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
               <button type="button" class="btn btn-danger btn-sm" onclick = "func_delete(\''.$row["user_id"].'\');" >Delete</a></td>';

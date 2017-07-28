@@ -37,6 +37,7 @@
       <table class="table table-striped table-bordered">
         <tr class="danger" >
             <td align='center'>UserID</td>
+            <td align='center'>Name</td>
             <td align='center'>Score</td>
             <td align='center'>Totaltime</td>
             <td align='center'>Datetime</td>
@@ -46,6 +47,7 @@
         while ($row = mysqli_fetch_array($query)) {
           echo '<tr>';
           echo '<td align="center">'.$row["user_id"].' </td>';
+          echo '<td align="center">'.$row["name"].' </td>';
           echo '<td align="center">'.$row["score"].' </td>';
           echo '<td align="center">'.$row["totaltime"].' </td>';
           echo '<td align="center">'.$row["datetime"].' </td>';
