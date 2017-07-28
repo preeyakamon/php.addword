@@ -1,10 +1,12 @@
 <?php
   require_once 'database/connector.php';
-  $sql = "SELECT * FROM score ";
+  $sql = "SELECT * FROM user, score ";
   $search = isset($_GET["search"]) ? $_GET["search"] : "";
   if ($search != "") {
-  $sql .= " WHERE score.datetime like '%$search%'";
-  }
+  $sql .= " WHERE (score.datetime like '%$search%' or user.name like '%$search%') and user.user_id = score.user_id group by score.score_id order by score.score desc";
+} else {
+  $sql .= " WHERE user.user_id = score.user_id group by score.score_id  order by score.score desc";
+}
   $query = mysqli_query($conn, $sql);
 ?>
 

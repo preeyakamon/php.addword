@@ -22,7 +22,8 @@ require_once '../database/connector.php';
   $name = $row0["name"];
   if (!empty($rowLevel)) {
     $maxtest = $rowLevel["number"];//เก็บค่าสูงสุด
-    $sqltest = "SELECT * FROM vocabulary LEFT JOIN level on vocabulary.level_id = level.level_id ORDER BY RAND() LIMIT $maxtest";
+    $upMaxTest = $maxtest * 15;
+    $sqltest = "SELECT * FROM vocabulary LEFT JOIN level on vocabulary.level_id = level.level_id ORDER BY RAND() LIMIT $upMaxTest";
     $querytest = mysqli_query($conn, $sqltest);
     $resp = [];
     $resp["result"] = true;
