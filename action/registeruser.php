@@ -7,8 +7,6 @@ if ($name != null || $user != null || $pass != null) {
     $sql = "INSERT INTO user(name, username, password)
     VALUES('$name', '$user', '$pass')";
 
-
-
   $sql1 = "SELECT * FROM user WHERE username = '$user'";
     $query1 = mysqli_query($conn, $sql1);
 

@@ -53,15 +53,40 @@
       <?php
       $count = 1;
       while ($row = mysqli_fetch_array($query)) {
-        echo '<tr>';
-        echo '<td align="center">'.$count.' </td>';
-        echo '<td align="center">'.$row["username"].' </td>';
         $id = $row["admin_id"];
-        echo '<td align="center"><a href ="editformadmin.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
-              <button type="button" class="btn btn-danger btn-sm" onclick = "func_delete(\''.$row["admin_id"].'\');" >Delete</a></td>';
+        if ($_SESSION["login_id"] == 1) {
+          echo '<tr>';
+          echo '<td align="center">'.$count.' </td>';
+          echo '<td align="center">'.$row["username"].' </td>';
+          if ($_SESSION["login_id"] == 1) {
+              if ($_SESSION["login_id"] == $id) {
+                echo '<td align="center"><a href ="editformadmin.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a></td>';
+              } else {
+                echo '<td align="center"><a href ="editformadmin.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
+                      <button type="button" class="btn btn-danger btn-sm" onclick="func_delete(\''.$row["admin_id"].'\');" >Delete</button></td>';
+              }
 
-        echo '</tr>';
-        $count++;
+            }else {
+              echo '<td align="center"><button type="button" class="btn btn-primary btn-sm" href="editformadmin.php" role="button">Edit</a>';
+            }
+
+          echo '</tr>';
+          $count++;
+        } else {
+          if ($id == 1) {
+            # code...
+          } else {
+            echo '<tr>';
+            echo '<td align="center">'.$count.' </td>';
+            echo '<td align="center">'.$row["username"].' </td>';
+            if ($_SESSION["login_id"] == $id) {
+              echo '<td align="center"><a href ="editformadmin.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a></td>';
+            } else {
+              echo '<td></td>';
+            }
+            $count++;
+          }
+        }
 
       }
        ?>

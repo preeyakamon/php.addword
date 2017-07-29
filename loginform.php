@@ -1,43 +1,44 @@
+<?php
+session_start();
+session_destroy();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>add word</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php require_once 'header.php'; ?>
+<title>addword</title>
+<?php include 'header.php' ?>
 </head>
 <body>
-
-
-  <div class="container">
-      <center>
-        <br/>
-        <br/>
-   <div class="row">
-     <div class="col-md-10 col-md-offset-1 jumbotron well">
-     <h2 >Log in</h2>
-     <form class="form-horizontal" action="action/editadmin.php?id=<?php echo $id;?>" method="post">
-       <div class="form-group">
-              <label for="admin_id" class="col-sm-2 control-label">Username</label>
-            <div class="col-sm-3">
-              <input type="id" class="form-control" readonly="readonly" id="admin_id" name="admin_id" value="<?php echo $row["admin_id"]; ?>" placeholder="Admin">
-            </div>
+  <br/>
+  <br/>
+  <br/>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <form class="form-horizontal" action="action/loginweb.php" method="post">
+            <div class="row">
+              <h2 align = 'center'> Login</h2>
+            <br/>
+              <div class="form-group">
+              <label for="username" class="col-sm-2 control-label">Username</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+              </div>
+              </div>
+              <div class="form-group">
+              <label for="password" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              </div>
+              </div>
+              <div class="form-group">
+              <div class="col-xs-12" align="center">
+              <button type="submit" class="btn btn-success">Login</button>
+              </div>
+              </div>
+          </form>
+        </div>
       </div>
-      <div class="form-group">
-             <label for="username" class="col-sm-2 control-label">password</label>
-           <div class="col-sm-3">
-             <input type="username" class="form-control" id="username" name="username" value="<?php echo $row["username"]; ?>" placeholder="username">
-           </div>
-     </div>
-     
-
-   <button type="submit" class="btn btn-primary">Login</button>
-
-
-
-   </div>
-  </div>
-</form>
-</center>
+    </div>
 </body>
 </html>
