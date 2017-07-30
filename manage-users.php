@@ -62,6 +62,7 @@
         echo '<td align="center">'.$row["name"].' </td>';
         echo '<td align="center">'.$row["username"].' </td>';
         echo '<td align="center">'.$row["status"].' </td>';
+
         $id = $row["user_id"];
         echo '<td align="center"><a href ="editformuser.php?id='.$id.'" class="btn btn-primary btn-sm" href="#" role="button">Edit</a>
               <button type="button" class="btn btn-danger btn-sm" onclick = "func_delete(\''.$row["user_id"].'\');" >Delete</a></td>';

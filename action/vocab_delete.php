@@ -5,6 +5,6 @@ $vocab = isset($_GET["vocabulary_id"]) ? $_GET["vocabulary_id"] : null; // short
 if ($vocab != null ) {
     $sql = " DELETE FROM vocabulary WHERE vocabulary_id = $vocab";
     $query = mysqli_query($conn, $sql) or die('Die query');
-    header("Location: http://localhost/addword/manager-vocab.php");
+    header("Location: http://www.two-friend.com/addword/manager-vocab.php");
     die();
 }

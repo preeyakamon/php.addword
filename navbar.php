@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["login_id"])) {
-  header('location:loginform.php');
+  header('Location:index.php');
 }
  ?>
 <div class="navbar navbar-inverse navbar-fixed-left">

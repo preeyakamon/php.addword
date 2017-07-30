@@ -1,4 +1,5 @@
 <?php
+session_start();
   require_once 'database/connector.php';
   $sql = "SELECT * FROM admin";
   $search = isset($_GET["search"]) ? $_GET["search"] : "";
@@ -38,8 +39,19 @@
     <label for="username"></label>
     <input type="text" name="search" class="form-control" id="username" placeholder="Username" value="<?=$search;?>">
     </div>
-    <button type="submit" class="btn btn-info">Search</button>
-    <a href="addadmin.php" class="btn btn-success">Add</a>
+
+
+<?php
+
+    if ($_SESSION["login_id"] == 1) {
+        echo '<button type="submit" class="btn btn-info">Search</button>
+        <a href="addadmin.php" class="btn btn-success">Add</a>';
+    }else {
+        echo '<button type="submit" class="btn btn-info">Search</button>';
+    }
+
+ ?>
+
     </form>
     </center>
 

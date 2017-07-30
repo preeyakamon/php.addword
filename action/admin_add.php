@@ -14,7 +14,7 @@ if ($username != null || $password != null ) {
 
     if (mysqli_num_rows($query1) <= 0) {
       $query = mysqli_query($conn, $sql) or die('Die query');
-      header("Location: http://localhost/addword/manager-admin.php");
+      header("Location: http://www.two-friend.com/addword/manager-admin.php");
     } else {
       echo "<script language=\"JavaScript\">";
       echo "(confirm('username ซ้ำ กรุณาลองใหม่')){history.go(-1)}";

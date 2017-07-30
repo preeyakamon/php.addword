@@ -9,6 +9,6 @@ if ($vocabulary_name != null || $translation != null || $level_id != null ) {
     $sql = "INSERT INTO vocabulary (vocabulary_name, translation, level_id)
     VALUES('$vocabulary_name', '$translation', '$level_id' )";
     $query = mysqli_query($conn, $sql) or die('Die query');
-    header("Location: http://localhost/addword/manager-vocab.php");
+    header("Location: http://www.two-friend.com/addword/manager-vocab.php");
     die();
 }

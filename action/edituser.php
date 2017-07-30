@@ -8,6 +8,6 @@ $password = isset($_POST["password"]) ? $_POST["password"] : null; // short if.
 if ($user != null || $name != null || $username != null || $password != null  ) {
     $sql = "UPDATE user SET  name = '$name', username = '$username',  password = '$password' WHERE user_id = $user";
     $query = mysqli_query($conn, $sql) or die('Die query => ' . mysqli_error($conn));
-    header("Location: http://localhost/addword/manage-users.php");
+    header("Location: http://www.two-friend.com/addword/manage-users.php");
     die();
 }

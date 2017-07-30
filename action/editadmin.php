@@ -7,6 +7,6 @@ $password = isset($_POST["password"]) ? $_POST["password"] : null; // short if.
 if ($user != null || $username != null || $password != null ) {
     $sql = "UPDATE admin SET username = '$username',  password = '$password' WHERE admin_id = $admin";
     $query = mysqli_query($conn, $sql) or die('Die query => ' . mysqli_error($conn));
-    header("Location: http://localhost/addword/manager-admin.php");
+    header("Location: http://www.two-friend.com/addword/manager-admin.php");
     die();
 }
