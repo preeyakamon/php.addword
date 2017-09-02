@@ -19,13 +19,13 @@
 
      <table class="table table-striped table-bordered">
        <tr class="info" >
-           <td align='center'>Level</td>
-           <td align='center'>name</td>
+           <td align='center'>ลำดับ</td>
+           <td align='center'>ชื่อของแต่ละ Level</td>
            <td align='center'>จำนวนคำที่ซ่อน</td>
-           <td align='center'>Number_answer</td>
-           <td align='center'>TestLevel</d>
-           <td align='center'>Second</td>
-           <td align='center'>Action</td>
+           <td align='center'>จำนวนคำที่ต้องตอบถูกของ Level</td>
+           <td align='center'>จำนวนคำที่ต้องตอบถูกหน้า TestLevel</d>
+           <td align='center'>เวลาของแต่ละ Level</td>
+           <td align='center'> Action </td>
        </tr>
 
        <?php

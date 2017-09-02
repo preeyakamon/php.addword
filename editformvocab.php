@@ -25,19 +25,19 @@
      <h2 >Edit Vocabulary</h2>
      <form class="form-horizontal" action="action/editvocab.php?id=<?php echo $id;?>" method="post">
        <div class="form-group">
-              <label for="vocabulary_id" class="col-sm-2 control-label">Vocabulary</label>
+              <label for="vocabulary_id" class="col-sm-2 control-label">ลำดับ</label>
             <div class="col-sm-3">
               <input type="id" class="form-control" readonly="readonly" id="vocabulary_id" name="vocabulary_id" value="<?php echo $row["vocabulary_id"]; ?>" placeholder="vocabulary">
             </div>
       </div>
       <div class="form-group">
-             <label for="vocabulary_name" class="col-sm-2 control-label">Vocabulary_Name</label>
+             <label for="vocabulary_name" class="col-sm-2 control-label">คำศัพท์</label>
            <div class="col-sm-3">
              <input type="vocabulary_name" class="form-control" id="vocabulary_name" name="vocabulary_name" value="<?php echo $row["vocabulary_name"]; ?>" placeholder="vocabulary_name">
            </div>
      </div>
       <div class="form-group">
-             <label for="translation" class="col-sm-2 control-label">Translation</label>
+             <label for="translation" class="col-sm-2 control-label">คำแปล</label>
            <div class="col-sm-3">
              <input type="translation" class="form-control" id="translation" name="translation" value="<?php echo $row["translation"]; ?>" placeholder="translation">
            </div>

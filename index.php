@@ -9,7 +9,7 @@ session_destroy();
 <title>addword</title>
 <?php include 'header.php' ?>
 </head>
-<body style="background-img: url("paper.gif")">
+<body style = "background-color:#CCFFCC;">
 
 
 

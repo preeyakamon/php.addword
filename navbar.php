@@ -22,7 +22,7 @@ if (!isset($_SESSION["login_id"])) {
    <li><a href="manager-Level-Time.php">Manager Level and Time</a></li>
    <li><a href="manager-vocab.php">Manager Vocabulary</a></li>
    <li><a href="manager-statistic.php">Manager Statistic</a></li>
-   <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
    <li><a href="action/logout.php"><h4>Logout</h4></a></li>
   </ul>
 </div>

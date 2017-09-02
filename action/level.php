@@ -18,7 +18,7 @@ while ($rowStep1 = mysqli_fetch_array($queryStep1)) {
       $queryplay = mysqli_query($conn, $sqlplay);
       $rowplay = mysqli_fetch_assoc($queryplay);
       if (!empty($rowplay)) {
-        $number = $rowplay["number_answer"]* 20;
+        $number = $rowplay["number_answer"]* 40;
         $sqlplay1 = "SELECT vocabulary_id, vocabulary_name, translation FROM vocabulary WHERE level_id = $level ORDER BY RAND() LIMIT $number" ;
         $querplay1= mysqli_query($conn, $sqlplay1);
         $data["result"] = true;

@@ -2,7 +2,7 @@
   require_once 'database/connector.php';
   $page = isset($_GET["page"]) ? $_GET["page"] : 1;
   $page -= 1;
-  $numberDisplay = 50;
+  $numberDisplay = 80;
   $start = $page * $numberDisplay;
     $search = isset($_GET["search"]) ? $_GET["search"] : "";
   $sql = "SELECT * FROM vocabulary WHERE vocabulary.vocabulary_name like '%$search%' or vocabulary.translation like '%$search%' or vocabulary.level_id like '%$search%' LIMIT $start, $numberDisplay";
@@ -47,9 +47,9 @@
         <br>
       <table class="table table-striped table-bordered">
         <tr class="warning" >
-            <td align='center'>Vocabulary_id</td>
-            <td align='center'>Vocabulary_Name</td>
-            <td align='center'>Translation</td>
+            <td align='center'>ลำดับ</td>
+            <td align='center'>คำศัพท์</td>
+            <td align='center'>คำแปล</td>
             <td align='center'>Level_id</td>
             <td align='center'>Action</td>
         </tr>
@@ -81,6 +81,9 @@
             <li class=""><a href="?page=4">4 <span class="sr-only">(current)</span></a></li>
             <li class=""><a href="?page=5">5 <span class="sr-only">(current)</span></a></li>
             <li class=""><a href="?page=6">6 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=7">7 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=8">8 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="?page=9">9 <span class="sr-only">(current)</span></a></li>
           </ul>
         </nav>
       </div>
